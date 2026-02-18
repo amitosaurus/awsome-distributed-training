@@ -93,7 +93,6 @@ def train(
             optimizer.step()
             lr_scheduler.step()
             total_steps += 1
-            loss_metric = loss.item()
             step_time = time.time() - step_start
             sample_processed = input_data.shape[0] * world_size
             throughput = sample_processed / step_time
